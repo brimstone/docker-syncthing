@@ -4,7 +4,7 @@ ENTRYPOINT ["/opt/syncthing", "-gui-address", "http://0.0.0.0:8080"]
 
 EXPOSE 8080
 
-ENV SYNCTHING_VERSION=0.14.17 \
+ENV SYNCTHING_VERSION=0.14.25 \
     HOME=/home
 
 RUN chmod 777 /home
@@ -19,6 +19,3 @@ RUN apk add --no-cache --virtual .build-deps \
  && apk del .build-deps \
  && mv syncthing-linux-amd64-v${SYNCTHING_VERSION}/syncthing /opt \
  && rmdir syncthing-linux-amd64-v${SYNCTHING_VERSION}
-
-
-
