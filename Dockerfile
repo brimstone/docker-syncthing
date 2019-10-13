@@ -12,7 +12,6 @@ RUN chmod 777 /home
 RUN apk add --no-cache --virtual .build-deps \
     curl \
     ca-certificates \
- && mkdir /opt \
  && cd /opt \
  && curl -L https://github.com/syncthing/syncthing/releases/download/v${SYNCTHING_VERSION}/syncthing-linux-amd64-v${SYNCTHING_VERSION}.tar.gz \
   | tar zx syncthing-linux-amd64-v${SYNCTHING_VERSION}/syncthing \
