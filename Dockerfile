@@ -14,6 +14,7 @@ RUN apk add --no-cache --virtual .build-deps \
     ca-certificates \
  && cd /opt \
  && arch="$(if [ "$(uname -m)" = "aarch64" ]; then echo "arm64"; else uname -m; fi)" \
+ && echo "Building for $arch" \
  && curl -L https://github.com/syncthing/syncthing/releases/download/v${SYNCTHING_VERSION}/syncthing-linux-$arch-v${SYNCTHING_VERSION}.tar.gz \
   | tar zx syncthing-linux-$arch-v${SYNCTHING_VERSION}/syncthing \
  && apk del .build-deps \
