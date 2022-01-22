@@ -3,3 +3,5 @@
 version="$(curl -i https://github.com/syncthing/syncthing/releases/latest -s | grep -m 1 location | sed 's_^.*/v__;s/\r//')"
 
 sed -i "s/SYNCTHING_VERSION=.*$/SYNCTHING_VERSION=$version \\\\/" Dockerfile
+git add Dockerfile
+git commit -m "Update to $version"
