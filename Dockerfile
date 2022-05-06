@@ -4,7 +4,7 @@ ENTRYPOINT ["/opt/syncthing", "-gui-address", "http://0.0.0.0:8080"]
 
 EXPOSE 8080
 
-ENV SYNCTHING_VERSION=1.19.0 \
+ENV SYNCTHING_VERSION=1.20.1 \
     HOME=/home
 
 RUN chmod 777 /home
